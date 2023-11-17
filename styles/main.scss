@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Mooli', Arial, sans-serif;
-    font-size: 22px;
+    font-size: clamp(0.65rem, 2.5vw, 22px);
     background-color: $main-bg;
 }
 
@@ -19,13 +19,15 @@ header {
     background-color: $main-bg;
     color: $main-color;
     font-family: 'Quicksand', sans-serif;
-    font-size: 1rem;
+    font-size: clamp(0.65rem, 2.5vw, 1rem);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     text-align: center;
+    height: 52px;
     max-height: 52px;
 }
+
 
 .navigation-bar {
     display: flex;
@@ -54,7 +56,7 @@ header {
     overflow: hidden;
 
     & .dropbtn {
-        font-size: 1rem;
+        font-size: clamp(0.65rem, 2.5vw, 1rem);
         border: none;
         outline: none;
         color: $main-color;
@@ -112,7 +114,7 @@ header {
         & .home-title {
             color: $main-color;
             font-family: 'Rubik', Helvetica, sans-serif;
-            font-size: 2em;
+            font-size: clamp(0.65rem, 2.5vw, 32px);
             margin-top: 10px;
         }
     }
@@ -135,6 +137,7 @@ header {
 /* Buttons */
 .button-box {
     text-align: center;
+    font-size: clamp(10px, 2.5vw, 1rem);
 
     & .button {
         background-color: $main-bg;
@@ -153,6 +156,8 @@ header {
     }
 }
 
+
+
 /* Footer */
 footer {
     display: grid;
@@ -161,7 +166,7 @@ footer {
     color: $main-color;
     height: 52px;
     max-height: 52px;
-    font-size: 1rem;
+    font-size: clamp(0.65rem, 2.5vw, 1rem);
     align-items: center;
 
     & .left {
@@ -184,9 +189,11 @@ footer {
             color: $main-color;
             text-decoration: none;
             margin-left: 1rem;
+
             & i {
                 font-size: 2rem;
             }
+
             &:hover {
                 color: darken($main-color, 25%);
                 transition: all 0.15s ease-in-out;
@@ -199,5 +206,53 @@ footer {
 
     & p {
         margin: 0;
+    }
+}
+
+/*********************/
+/*** Media Queries ***/
+/*********************/
+
+/* Navigation */
+
+@media (max-width: 900px) {
+    #hero {
+        display: block;
+        z-index: -1;
+        background-image: none;
+        background-color: rgb(40, 40, 40);
+        min-height: calc(100vh - 104px);
+
+        &-msg {
+            margin: 5% 20%;
+
+            & .home-title {
+                color: $main-color;
+                font-family: 'Rubik', Helvetica, sans-serif;
+                font-size: 32px;
+                margin-top: 10px;
+                margin-block-end:0px;
+            }
+            & span,h4 {
+                font-size: clamp(10px, 2.5vw, 22px);
+                margin-block-end: 0px;
+            }
+        }
+
+        &-pfp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+
+            & img {
+                margin-top: 5vh;
+                width: 100%;
+                max-width: 45vw;
+            }
+        }
+    }
+    .button-box {
+        margin-top: 10%;
     }
 }
