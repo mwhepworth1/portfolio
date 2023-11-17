@@ -7,6 +7,7 @@ body {
   font-family: "Mooli", Arial, sans-serif;
   font-size: clamp(0.65rem, 2.5vw, 22px);
   background-color: #1a1a1a;
+  color: #f1f1f1;
 }
 
 /* Navigation Bar */
@@ -84,7 +85,7 @@ header {
   grid-template-columns: 1fr 3fr 0.75fr 3fr 1fr;
   grid-template-rows: 10vh 65vh 10vh;
   z-index: -1;
-  background-image: url("../img/alaska.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/alaska.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -99,8 +100,13 @@ header {
 #hero-msg .home-title {
   color: #f1f1f1;
   font-family: "Rubik", Helvetica, sans-serif;
-  font-size: clamp(0.65rem, 2.5vw, 32px);
+  font-size: clamp(0.65rem, 3.5vw, 48px);
   margin-top: 10px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+#hero-msg h4 {
+  margin-block-start: 5px;
 }
 #hero-pfp {
   display: flex;
