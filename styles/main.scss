@@ -47,8 +47,8 @@ header {
 
         & span {
             &:hover {
-                color: darken($main-color, 20%);
-                border-bottom: 2px solid darken($main-color, 20%);
+                color: $accent;
+                border-bottom: 2px solid $accent;
                 transition: border-bottom 0.15s ease-in-out;
             }
         }
@@ -414,6 +414,44 @@ footer {
 .blue-accent {
     color: $secondary-accent;
     transition: all 0.25s ease-in-out
+}
+
+/***********************/
+/*** Portfolio Items ***/
+/***********************/
+.casestudy-item {
+    padding-left: 25%;
+    padding-right: 25%;
+    & h1 {
+        text-align: center;
+    }
+    & p {
+        font-size: 1rem;
+    }
+    & a {
+        text-decoration: none;
+        color: $accent;
+    }
+    border-bottom: 2px solid $accent;
+}
+.tryit {
+    background-color: $main-bg;
+    display:grid;
+    grid-template-columns: 1fr 650px;
+    &-info {
+        grid-column: 1/2;
+        text-align: center;
+        & p {
+            font-size: 1rem;
+        }
+        & div.button-box {
+            padding-top: 25px;
+        }
+    }
+    & #message-container {
+        grid-column: 2/3;
+        max-width: 620px;
+    }
 }
 
 /*********************/

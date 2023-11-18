@@ -39,8 +39,8 @@ header {
   float: left;
 }
 .navigation-bar a span:hover {
-  color: #bebebe;
-  border-bottom: 2px solid #bebebe;
+  color: #E07D0B;
+  border-bottom: 2px solid #E07D0B;
   transition: border-bottom 0.15s ease-in-out;
 }
 
@@ -349,6 +349,45 @@ footer p {
 .blue-accent {
   color: #3F7388;
   transition: all 0.25s ease-in-out;
+}
+
+/***********************/
+/*** Portfolio Items ***/
+/***********************/
+.casestudy-item {
+  padding-left: 25%;
+  padding-right: 25%;
+  border-bottom: 2px solid #E07D0B;
+}
+.casestudy-item h1 {
+  text-align: center;
+}
+.casestudy-item p {
+  font-size: 1rem;
+}
+.casestudy-item a {
+  text-decoration: none;
+  color: #E07D0B;
+}
+
+.tryit {
+  background-color: #333333;
+  display: grid;
+  grid-template-columns: 1fr 650px;
+}
+.tryit-info {
+  grid-column: 1/2;
+  text-align: center;
+}
+.tryit-info p {
+  font-size: 1rem;
+}
+.tryit-info div.button-box {
+  padding-top: 25px;
+}
+.tryit #message-container {
+  grid-column: 2/3;
+  max-width: 620px;
 }
 
 /*********************/
