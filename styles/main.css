@@ -1,18 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Mooli&family=Quicksand:wght@400;700&family=Roboto:wght@400;700&family=Rubik:wght@400;700;900&display=swap");
 /* Vars */
-/* Global */
+/**************/
+/*** Global ***/
+/**************/
 body {
   margin: 0;
   padding: 0;
   font-family: "Mooli", Arial, sans-serif;
   font-size: clamp(0.65rem, 2.5vw, 22px);
-  background-color: #1a1a1a;
+  background-color: #333333;
   color: #f1f1f1;
 }
 
 /* Navigation Bar */
 header {
-  background-color: #1a1a1a;
+  background-color: #333333;
   color: #f1f1f1;
   font-family: "Quicksand", sans-serif;
   font-size: clamp(0.65rem, 2.5vw, 1rem);
@@ -58,7 +60,7 @@ header {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #1a1a1a;
+  background-color: #333333;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -73,52 +75,10 @@ header {
   text-align: left;
 }
 .dropdown-content a:hover {
-  background-color: #1a1a1a;
+  background-color: #333333;
 }
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-/* Home Hero */
-#hero {
-  display: grid;
-  grid-template-columns: 1fr 3fr 0.75fr 3fr 1fr;
-  grid-template-rows: 10vh 65vh 10vh;
-  z-index: -1;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/alaska.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: calc(100vh - 104px);
-}
-#hero-msg {
-  grid-column: 4/5;
-  grid-row: 2/3;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-#hero-msg .home-title {
-  color: #f1f1f1;
-  font-family: "Rubik", Helvetica, sans-serif;
-  font-size: clamp(0.65rem, 3.5vw, 48px);
-  margin-top: 10px;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-}
-#hero-msg h4 {
-  margin-block-start: 5px;
-}
-#hero-pfp {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-column: 2/3;
-  grid-row: 2/3;
-  margin: 0 auto;
-}
-#hero-pfp img {
-  width: 100%;
-  max-width: 500px;
 }
 
 /* Buttons */
@@ -127,14 +87,14 @@ header {
   font-size: clamp(10px, 2.5vw, 1rem);
 }
 .button-box .button {
-  background-color: #1a1a1a;
+  background-color: #E07D0B;
   color: #f1f1f1;
   text-decoration: none;
   text-align: center;
   padding: 16px 18px;
 }
 .button-box .button:hover {
-  background-color: #1a1a1a;
+  background-color: #333333;
   filter: invert(100%);
   --webkit0filter: invert(100%);
   color: #f1f1f1;
@@ -181,6 +141,131 @@ footer .right a:hover {
 }
 footer p {
   margin: 0;
+}
+
+/************/
+/*** Home ***/
+/************/
+/* Home Hero */
+#hero {
+  display: grid;
+  grid-template-columns: 1fr 3fr 0.75fr 3fr 1fr;
+  grid-template-rows: 10vh 65vh 10vh;
+  z-index: -1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/alaska.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: calc(100vh - 104px);
+}
+#hero-msg {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#hero-msg .home-title {
+  color: #f1f1f1;
+  font-family: "Rubik", Helvetica, sans-serif;
+  font-size: clamp(0.65rem, 3.5vw, 48px);
+  margin-top: 10px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+#hero-msg h4 {
+  margin-block-start: 5px;
+}
+#hero-pfp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  margin: 0 auto;
+}
+#hero-pfp img {
+  width: 100%;
+  max-width: 500px;
+}
+
+/*************/
+/*** About ***/
+/*************/
+.about-img-float-left {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+.about-img-float-left .about-left {
+  grid-column: 1/2;
+  width: 95%;
+}
+.about-img-float-left .about-right {
+  grid-column: 2/3;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.about-img-float-left .about-right h1 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+.about-img-float-left .about-right p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+.about-img-float-right {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  background-color: #BCBCBC;
+  color: #333333;
+}
+.about-img-float-right .about-left {
+  grid-column: 1/2;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0px 3%;
+}
+.about-img-float-right .about-left h1 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+.about-img-float-right .about-left p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+.about-img-float-right .about-right {
+  grid-column: 2/3;
+  width: 100%;
+}
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  background-color: #BCBCBC;
+  color: #333333;
+}
+.about-hero h1 {
+  grid-column: 2/3;
+  text-align: center;
+}
+.about-hero-footer {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  min-height: 150px;
+  background-color: #BCBCBC;
+  color: #333333;
+}
+.about-hero-footer h1 {
+  grid-column: 2/3;
+  text-align: center;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.about-hero-footer div.button-box {
+  grid-column: 3/4;
+  text-align: center;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /*********************/
