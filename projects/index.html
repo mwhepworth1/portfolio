@@ -32,42 +32,54 @@
     </header>
     <main>
         <div class="portfolio-hero">
-            <h1>Here's my projects:</h1>
+            <h1>Here's some of my projects:</h1>
         </div>
         <div class="content">
             <div class="portfolio-item"> <!-- IMG Float Left -->
-                <div class="about-left">
-                    <img src="../../img/alaska.jpg" alt="A scenic picture of Alaska" class="portfolio-img">
-                </div>
-                <div class="portfolio-right portfolio-text">
-                    <h1>I absolutely love to travel</h1>
-                    <p>and I've visited all 50 states by the time I was 18!</p>
-                </div>
-            </div>
-            <div class="portfolio-item"> <!-- IMG Float Right -->
-                <div class="portfolio-left portfolio-text">
-                    <h1>I'm motivated by music</h1>
-                    <p>because it allows me to relax and enter a state of flow.</p>
-                </div>
+                <img class="portfolio-left" src="../img/alaska.jpg" alt="A scenic picture of Alaska">
                 <div class="portfolio-right">
-                    <img src="../../img/denali.jpg" alt="A scenic picture of Denali National Park in Alaska"
-                        class="portfolio-img">
+                    <h1>Canvas Discord Bot</h1>
+                    <p>A BYU-Idaho Hackathon project built to bridge the gap between education and video games.</p>
+                    <a href="#">
+                        <div class="icon">
+                            <i class="fa-solid fa-angles-right"></i>
+                        </div>
+                        <p class="explore">explore this project</p>
+                    </a>
                 </div>
             </div>
-            <div class="portfolio-item"> <!-- IMG Fload Left -->
-                <div class="portfolio-left">
-                    <img src="../../img/mischevious-me.jpg" alt="A picture of little mischevious me!"
-                        class="portfolio-img">
+            <div class="portfolio-item"> <!-- IMG Float Left -->
+                <img class="portfolio-left" src="../img/alaska.jpg" alt="A scenic picture of Alaska">
+                <div class="portfolio-right">
+                    <h1>Bruh.uno</h1>
+                    <p>A link shortener project built entirely in Node.js.</p>
+                    <a href="#">
+                        <div class="icon">
+                            <i class="fa-solid fa-angles-right"></i>
+                        </div>
+                        <p class="explore">explore this project</p>
+                    </a>
                 </div>
-                <div class="portfolio-right portfolio-text">
-                    <h1>I am mishcevious</h1>
-                    <p>and I like to cause chaotic fun where I can!</p>
+            </div>
+            <div class="portfolio-item"> <!-- IMG Float Left -->
+                <img class="portfolio-left" src="../img/alaska.jpg" alt="A scenic picture of Alaska">
+                <div class="portfolio-right">
+                    <h1>Discord Miner</h1>
+                    <p>A discord bot with Minecraft-like commands and gameplay.</p>
+                    <a href="#">
+                        <div class="icon">
+                            <i class="fa-solid fa-angles-right"></i>
+                        </div>
+                        <p class="explore">explore this project</p>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="portfolio-hero">
-            <h1>Have Questions?</h1>
-            <a class="button" href="contact.html">Contact Me</a>
+        <div class="portfolio-hero-footer">
+            <h1>Still curious?</h1>
+            <div class="button-box">
+                <a class="button" href="contact.html">Contact Me</a>
+            </div>
         </div>
     </main>
     <footer>
@@ -81,6 +93,36 @@
             <a target="_blank" href="https://facebook.com/mwhepworth"><i class="fa-brands fa-facebook"></i></a>
         </div>
     </footer>
+    <script>
+    // Get all the <a> tags
+        const aTags = document.querySelectorAll('a');
+    // Loop through each <a> tag
+    aTags.forEach(aTag => {
+        aTag.addEventListener('mouseover', () => {
+            // Get the <i> tag within the <a> tag
+            const iTag = aTag.querySelector('i');
+
+            // Check if the <i> tag has the class "fa-angles-right"
+            if (iTag && iTag.classList.contains('fa-angles-right')) {
+                // Add the "fa-fade" class to the <i> tag
+                iTag.classList.add('fa-fade');
+                iTag.classList.add('blue-accent');
+            }
+        });
+
+        aTag.addEventListener('mouseout', () => {
+            // Get the <i> tag within the <a> tag
+            const iTag = aTag.querySelector('i');
+
+            // Check if the <i> tag has the class "fa-angles-right"
+            if (iTag && iTag.classList.contains('fa-angles-right')) {
+                // Remove the "fa-fade" class from the <i> tag
+                iTag.classList.remove('fa-fade');
+                iTag.classList.remove('blue-accent');
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

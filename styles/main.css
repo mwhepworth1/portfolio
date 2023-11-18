@@ -268,6 +268,89 @@ footer p {
   margin-bottom: auto;
 }
 
+/*****************/
+/*** Portfolio ***/
+/*****************/
+.portfolio-item {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  height: 375px;
+  max-height: 375px;
+  min-height: 375px;
+}
+.portfolio-item .portfolio-left {
+  grid-column: 1/2;
+  width: 95%;
+}
+.portfolio-item .portfolio-right {
+  grid-column: 2/3;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 5%;
+  justify-content: center;
+}
+.portfolio-item .portfolio-right a {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+.portfolio-item .portfolio-right h1 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+.portfolio-item .portfolio-right p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+.portfolio-item .portfolio-right .explore {
+  text-align: center;
+}
+.portfolio-item .portfolio-right div.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15%;
+}
+.portfolio-item .portfolio-right div.icon i {
+  font-size: 4rem;
+}
+.portfolio-hero {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  background-color: #BCBCBC;
+  color: #333333;
+}
+.portfolio-hero h1 {
+  grid-column: 2/3;
+  text-align: center;
+}
+.portfolio-hero-footer {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  min-height: 150px;
+  background-color: #BCBCBC;
+  color: #333333;
+}
+.portfolio-hero-footer h1 {
+  grid-column: 2/3;
+  text-align: center;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.portfolio-hero-footer div.button-box {
+  grid-column: 3/4;
+  text-align: center;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.blue-accent {
+  color: #3F7388;
+  transition: all 0.25s ease-in-out;
+}
+
 /*********************/
 /*** Media Queries ***/
 /*********************/
@@ -290,7 +373,8 @@ footer p {
     margin-top: 10px;
     margin-block-end: 0px;
   }
-  #hero-msg span, #hero-msg h4 {
+  #hero-msg span,
+  #hero-msg h4 {
     font-size: clamp(10px, 2.5vw, 22px);
     margin-block-end: 0px;
   }
