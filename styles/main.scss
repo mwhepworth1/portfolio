@@ -332,7 +332,8 @@ footer {
 
         & .portfolio-left {
             grid-column: 1/2;
-            width: 95%;
+            width: 100%;
+            height: 100%;
         }
 
         & .portfolio-right {
@@ -392,6 +393,7 @@ footer {
             min-height: 150px;
             background-color: $secondary-color;
             color: $main-bg;
+            margin-top: 32px;
 
             & h1 {
                 grid-column: 2/3;
