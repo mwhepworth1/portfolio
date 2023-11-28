@@ -83,14 +83,12 @@ header {
 
 /* Buttons */
 .button-box {
-  text-align: center;
   font-size: clamp(10px, 2.5vw, 1rem);
 }
 .button-box .button {
   background-color: #E07D0B;
   color: #f1f1f1;
   text-decoration: none;
-  text-align: center;
   padding: 16px 18px;
 }
 .button-box .button:hover {

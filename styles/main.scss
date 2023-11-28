@@ -6,6 +6,8 @@ $secondary-color: #BCBCBC;
 $main-bg: #333333;
 $accent: #E07D0B;
 $secondary-accent: #3F7388;
+$title-font: 'Quicksand', Helvetica, sans-serif;
+$para-font: 'Mooli', Arial, sans-serif;
 
 /**************/
 /*** Global ***/
@@ -99,15 +101,13 @@ header {
 
 /* Buttons */
 .button-box {
-    text-align: center;
     font-size: clamp(10px, 2.5vw, 1rem);
 
     & .button {
         background-color: $accent;
         color: $main-color;
         text-decoration: none;
-        text-align: center;
-        padding: 16px 18px;
+        padding: 16px 18px; 
 
         &:hover {
             background-color: $main-bg;
