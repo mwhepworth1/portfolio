@@ -162,6 +162,10 @@ footer p {
   margin-top: auto;
   margin-bottom: auto;
 }
+#hero-msg .hello-grid {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+}
 #hero-msg .home-title {
   color: #f1f1f1;
   font-family: "Rubik", Helvetica, sans-serif;
@@ -169,6 +173,16 @@ footer p {
   margin-top: 10px;
   margin-block-start: 0px;
   margin-block-end: 0px;
+  grid-column: 2/3;
+}
+#hero-msg .home-line {
+  width: 75%;
+  height: 3px;
+  background-color: #E07D0B;
+  font-size: 3px;
+  grid-column: 1/2;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 #hero-msg h4 {
   margin-block-start: 5px;

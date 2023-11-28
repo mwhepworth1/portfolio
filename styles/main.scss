@@ -191,6 +191,10 @@ footer {
         margin-top: auto;
         margin-bottom: auto;
 
+        & .hello-grid {
+            display: grid;
+            grid-template-columns: 45px 1fr;
+        }
         & .home-title {
             color: $main-color;
             font-family: 'Rubik', Helvetica, sans-serif;
@@ -198,8 +202,17 @@ footer {
             margin-top: 10px;
             margin-block-start: 0px;
             margin-block-end: 0px;
+            grid-column: 2/3;
         }
-
+        & .home-line {
+            width: 75%;
+            height: 3px;
+            background-color: $accent;
+            font-size: 3px;
+            grid-column: 1/2;
+            margin-top:auto;
+            margin-bottom: auto;
+        }
         & h4 {
             margin-block-start: 5px;
         }
