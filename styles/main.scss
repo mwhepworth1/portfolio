@@ -270,8 +270,8 @@ footer {
         &-right {
             display: grid;
             grid-template-columns: 2fr 3fr;
-            background-color: $secondary-color;
-            color: $main-bg;
+            background-color: $main-bg;
+            color: $main-color;
 
             & .about-left {
                 grid-column: 1/2;
@@ -301,8 +301,8 @@ footer {
     &-hero {
         display: grid;
         grid-template-columns: 1fr 3fr 1fr;
-        background-color: $secondary-color;
-        color: $main-bg;
+        background-color: $main-bg;
+        color: $main-color;
 
         & h1 {
             grid-column: 2/3;
@@ -313,8 +313,8 @@ footer {
             display: grid;
             grid-template-columns: 1fr 3fr 3fr 1fr;
             min-height: 150px;
-            background-color: $secondary-color;
-            color: $main-bg;
+            background-color: $main-bg;
+            color: $main-color;
 
             & h1 {
                 grid-column: 2/3;
@@ -333,7 +333,18 @@ footer {
             }
         }
     }
+    &-line {
+        display:block;
+        width: 100vw;
+        height: 3px;
+        background-color: $accent;
+        font-size: 3px;
+        grid-column: 1/2;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 }
+
 
 /*****************/
 /*** Portfolio ***/
@@ -395,8 +406,8 @@ footer {
     &-hero {
         display: grid;
         grid-template-columns: 1fr 3fr 1fr;
-        background-color: $secondary-color;
-        color: $main-bg;
+        background-color: $main-bg;
+            color: $main-color;
 
         & h1 {
             grid-column: 2/3;
@@ -407,8 +418,8 @@ footer {
             display: grid;
             grid-template-columns: 1fr 3fr 3fr 1fr;
             min-height: 150px;
-            background-color: $secondary-color;
-            color: $main-bg;
+            background-color: $main-bg;
+                color: $main-color;
             margin-top: 32px;
 
             & h1 {
