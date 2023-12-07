@@ -353,14 +353,14 @@ footer {
     &-item {
         display: grid;
         grid-template-columns: 3fr 2fr;
-        height: 375px;
-        max-height: 375px;
-        min-height: 375px;
+        height: 410px;
+        border-bottom: 2px solid #E07D0B;
+        border-top: 2px solid #E07D0B;
 
         & .portfolio-left {
             grid-column: 1/2;
             width: 100%;
-            height: 100%;
+            height: 410px;
         }
 
         & .portfolio-right {
@@ -369,6 +369,7 @@ footer {
             margin-bottom: auto;
             padding: 5%;
             justify-content: center;
+            height: 410px;
 
             & a {
                 text-decoration: none;
@@ -401,7 +402,15 @@ footer {
                 }
             }
         }
+        &:first-child {
+            border-width: 4px 0 2px;
+        }
+        &:last-child {
+            border-width: 2px 0 4px;
+        }
+
     }
+    
 
     &-hero {
         display: grid;
@@ -455,10 +464,13 @@ footer {
 
     & h1 {
         text-align: center;
+        font-size: 28px; 
     }
 
     & p {
         font-size: 1rem;
+        padding-bottom: 25px;
+        border-bottom: 2px solid $accent;
     }
 
     & a {
@@ -466,7 +478,7 @@ footer {
         color: $accent;
     }
 
-    border-bottom: 2px solid $accent;
+    
 }
 
 .tryit {
