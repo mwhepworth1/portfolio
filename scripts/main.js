@@ -116,6 +116,32 @@ function updateMessage(command) {
             updateField(5, 'U.S. History to 1877:', 'Final Exam');
             
             break;
+        case 'upcomingAssignments':
+            let upcomingMSG = ['A list of upcoming assignments in the next <code>7</code> days.<br>'];
+
+            upcomingMSG.push('<b>Computer Systems | ECEN 106<br>Homework 11 (multiple attempts allowed)</b>');
+            upcomingMSG.push('Due in 5 days.<br>');
+            upcomingMSG.push('<b>Computer Systems | ECEN 106<br>Lab 3 Report</b>');
+            upcomingMSG.push('Due in 5 days.<br>');
+            upcomingMSG.push('<b>Growth & Grit First Year | GE 101<br>The Power of Grit and Grace - Ponder & Prove Journal</b>');
+            upcomingMSG.push('Due in 6 days.<br>');
+            upcomingMSG.push('<b>Growth & Grit First Year | GE 101<br>Week 6 - Attendance & Participation (For Instructors to Complete)</b>');
+            upcomingMSG.push('Due in 6 days.<br>');
+            upcomingMSG.push('<b>Jesus Christ Evrlst Gospel | REL 250C<br>12-Pre-Class Reading - The Gospels: Different Approaches, Same Message</b>');
+            upcomingMSG.push('Due in 7 days.<br>');
+            upcomingMSG.push('<b>U.S. History to 1877 | HIST 120<br>Pop Teaching #2</b>');
+            upcomingMSG.push('Due in 7 days.<br>');
+
+            messageInit(time, command);
+            updateElement('discord-embed-title', 'Canvas LMS | Recently Graded Assignments');
+            updateElement('discord-embed-description', upcomingMSG.join('<br>'));
+            break;
+        case 'settings':
+            messageInit(time, command);
+            updateElement('discord-embed-title', 'Canvas LMS | Settings');
+            updateElement('discord-embed-description', 'This message has not been configured yet. Please check back at a later time.');
+            
+            break;
     }
     console.log('Updated Discord Message!');
 }
