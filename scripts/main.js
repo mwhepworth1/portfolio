@@ -33,11 +33,24 @@ function updateMessage(command) {
     if (hours > 12) {
         hours = hours - 12;
         isPM = true;
+    } else if ((hours-12) == 0 && isPM == false) {
+        hours = hours;
+        isPM = true;
+    } else if ((hours-12) == 0 && isPM == true) {
+        hours = hours;
+        isPM = false;
     }
     let time = hours + ':' + mins + " AM";
     if (isPM == true) time = hours + ':' + mins + " PM";
+    console.log(time);
 
     switch (command) {
+        case 'pageLoad':
+            messageInit(time, command);
+            updateElement('discord-embed-title', 'Canvas LMS | Select a Button');
+            updateElement('discord-embed-description', 'To see an example of the different features of this project, select a button to your left.');
+            
+            break;
         case 'grades':
             messageInit(time, command);
             updateElement('discord-embed-title', 'Canvas LMS | Current Course Grades');
@@ -90,6 +103,18 @@ function updateMessage(command) {
             messageInit(time, command);
             updateElement('discord-embed-title', 'Canvas LMS | Recently Graded Assignments');
             updateElement('discord-embed-description', recentGradesMSG.join('<br>'));
+            break;
+        case 'dueToday':
+            messageInit(time, command);
+            updateElement('discord-embed-title', 'Canvas LMS | Assignments Due Today');
+            updateElement('discord-embed-description', 'The following assignments are due today. Ensure you have enough time to complete them!');
+            updateField(0, 'Computer Systems:', 'Final Project (Video)');
+            updateField(1, 'Computer Systems:', 'Final Project (Report)');
+            updateField(2, 'Growth and Grit First Year:', 'W13: Attendance');
+            updateField(3, 'Jesus Christ Evrlst Gospel:', 'Pre-class reading: The Everlasting Covenant');
+            updateField(4, 'Technical Teamwork:', 'Stand-up Meeting');
+            updateField(5, 'U.S. History to 1877:', 'Final Exam');
+            
             break;
     }
     console.log('Updated Discord Message!');
