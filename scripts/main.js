@@ -25,6 +25,16 @@ function messageInit(time, command) {
     updateField(4, "","");
     updateField(5, "","");
 }
+function updateGrid(num) {
+    if (num == 1) {
+        document.getElementsByClassName('tryit')[0].style.gridTemplateColumns = '1fr 400px 650px';
+        document.getElementsByClassName('tryit-subcommands')[0].style.display = 'block';
+        document.getElementById('message-container').style.gridColumn = '3 / 4';
+    } else {
+    document.getElementsByClassName('tryit')[0].style.gridTemplateColumns = '1fr 650px';
+
+    }
+}
 function updateMessage(command) {
     let date = new Date(),
         hours = date.getHours(),
@@ -46,12 +56,14 @@ function updateMessage(command) {
 
     switch (command) {
         case 'pageLoad':
+            updateGrid(0);
             messageInit(time, command);
             updateElement('discord-embed-title', 'Canvas LMS | Select a Button');
             updateElement('discord-embed-description', 'To see an example of the different features of this project, select a button to your left.');
             
             break;
         case 'grades':
+            updateGrid(0);
             messageInit(time, command);
             updateElement('discord-embed-title', 'Canvas LMS | Current Course Grades');
             updateElement('discord-embed-description', 'A list of grades and their associated courses.');
@@ -64,6 +76,7 @@ function updateMessage(command) {
             
             break;
         case 'help':
+            updateGrid(0);
             let helpMSG = ['A list of commands and their valid arguments.<br>'];
 
             helpMSG.push('<code> <b>.help</b></code> <br> Displays this menu.');
@@ -85,6 +98,7 @@ function updateMessage(command) {
             updateElement('discord-embed-description', helpMSG.join('<br>'));
             break;
         case 'recentgrades':
+            updateGrid(0);
             let recentGradesMSG = ['A list grades recieved in the last <code>4</code> days.<br>'];
 
             recentGradesMSG.push('<b>Computer Systems | ECEN 106<br>Homework 11 (multiple attempts allowed)</b>');
@@ -105,6 +119,7 @@ function updateMessage(command) {
             updateElement('discord-embed-description', recentGradesMSG.join('<br>'));
             break;
         case 'dueToday':
+            updateGrid(0);
             messageInit(time, command);
             updateElement('discord-embed-title', 'Canvas LMS | Assignments Due Today');
             updateElement('discord-embed-description', 'The following assignments are due today. Ensure you have enough time to complete them!');
@@ -117,6 +132,7 @@ function updateMessage(command) {
             
             break;
         case 'upcomingAssignments':
+            updateGrid(0);
             let upcomingMSG = ['A list of upcoming assignments in the next <code>7</code> days.<br>'];
 
             upcomingMSG.push('<b>Computer Systems | ECEN 106<br>Homework 11 (multiple attempts allowed)</b>');
@@ -137,6 +153,7 @@ function updateMessage(command) {
             updateElement('discord-embed-description', upcomingMSG.join('<br>'));
             break;
         case 'settings':
+            updateGrid(1);
             messageInit(time, command);
             updateElement('discord-embed-title', 'Canvas LMS | Settings');
             updateElement('discord-embed-description', 'This message has not been configured yet. Please check back at a later time.');

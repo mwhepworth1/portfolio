@@ -418,6 +418,16 @@ footer p {
 .tryit-info div.button-box {
   padding-top: 25px;
 }
+.tryit-subcommands {
+  display: none;
+  grid-column: 2/3;
+}
+.tryit-subcommands p {
+  font-size: 1rem;
+}
+.tryit-subcommands div.button-box {
+  padding-top: 25px;
+}
 .tryit #message-container {
   grid-column: 2/3;
   max-width: 620px;

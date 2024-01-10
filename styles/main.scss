@@ -498,6 +498,17 @@ footer {
             padding-top: 25px;
         }
     }
+    &-subcommands {
+        display: none;
+        grid-column: 2/3;
+        & p {
+            font-size: 1rem;
+        }
+    
+        & div.button-box {
+            padding-top: 25px;
+        }
+    }
 
     & #message-container {
         grid-column: 2/3;
