@@ -90,6 +90,7 @@ header {
   color: #f1f1f1;
   text-decoration: none;
   padding: 16px 18px;
+  margin-top: 4px;
   display: inline-block;
 }
 .button-box .button:hover {
@@ -412,16 +413,19 @@ footer p {
 .tryit-info {
   grid-column: 1/2;
   text-align: center;
+  grid-row: 1/2;
 }
 .tryit-info p {
   font-size: 1rem;
 }
 .tryit-info div.button-box {
   padding-top: 25px;
+  margin: 5px;
 }
 .tryit-subcommands {
   display: none;
   grid-column: 2/3;
+  grid-row: 1/2;
   text-align: center;
 }
 .tryit-subcommands p {

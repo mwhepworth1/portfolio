@@ -1,3 +1,4 @@
+let commandHistory = [];
 function updateElement(className, value) {
     let elements = document.getElementsByClassName(className);
     for (let i =0;i<elements.length;i++) {
@@ -24,6 +25,7 @@ function messageInit(time, command) {
     updateField(3, "","");
     updateField(4, "","");
     updateField(5, "","");
+    commandHistory.push(command);
 }
 function updateGrid(num) {
     if (num == 1) {
@@ -31,8 +33,9 @@ function updateGrid(num) {
         document.getElementsByClassName('tryit-subcommands')[0].style.display = 'block';
         document.getElementById('message-container').style.gridColumn = '3 / 4';
     } else {
-    document.getElementsByClassName('tryit')[0].style.gridTemplateColumns = '1fr 650px';
-
+        document.getElementsByClassName('tryit')[0].style.gridTemplateColumns = '1fr 650px';
+document.getElementsByClassName('tryit-subcommands')[0].style.display = 'none';
+        document.getElementById('message-container').style.gridColumn = '2 / 3';
     }
 }
 function updateMessage(command) {
@@ -60,6 +63,13 @@ function updateMessage(command) {
             messageInit(time, command);
             updateElement('discord-embed-title', 'Canvas LMS | Select a Button');
             updateElement('discord-embed-description', 'To see an example of the different features of this project, select a button to your left.');
+            
+            break;
+        case 'previousPage':
+            console.log(commandHistory);
+            if (commandHistory.length > 0) {
+                updateMessage(commandHistory[commandHistory.length - 2]);
+            }
             
             break;
         case 'grades':

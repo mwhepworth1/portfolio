@@ -108,6 +108,7 @@ header {
         color: $main-color;
         text-decoration: none;
         padding: 16px 18px;
+        margin-top: 4px;
         display: inline-block;
 
         &:hover {
@@ -490,18 +491,20 @@ footer {
     &-info {
         grid-column: 1/2;
         text-align: center;
-
+        grid-row:1/2;
         & p {
             font-size: 1rem;
         }
 
         & div.button-box {
             padding-top: 25px;
+            margin:5px;
         }
     }
     &-subcommands {
         display: none;
         grid-column: 2/3;
+        grid-row: 1/2;
         text-align: center;
         & p {
             font-size: 1rem;
