@@ -108,6 +108,7 @@ header {
         color: $main-color;
         text-decoration: none;
         padding: 16px 18px;
+        display: inline-block;
 
         &:hover {
             background-color: $main-bg;
@@ -501,6 +502,7 @@ footer {
     &-subcommands {
         display: none;
         grid-column: 2/3;
+        text-align: center;
         & p {
             font-size: 1rem;
         }
@@ -562,5 +564,22 @@ footer {
 
     .button-box {
         margin-top: 10%;
+    }
+    .tryit-subcommands {
+        & .button-box {
+            margin-top: 0px;
+            margin-bottom: 15%;
+        }
+    }
+    .casestudy-item {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+    .tryit {
+        display: block;
+    }
+    .button-box .button {
+        padding: 8px 9px;
+        margin: 5px;
     }
 }

@@ -154,9 +154,16 @@ function updateMessage(command) {
             break;
         case 'settings':
             updateGrid(1);
+            let settingsMSG = ['A list of current settings. <code>(default)</code> represents no user defined settings.'];
+            settingsMSG.push('<b>API Key</b><br>Please provide an API key.');
+            settingsMSG.push('<b>Color</b><br>#E80231 <code>(default)</code>');
+            settingsMSG.push('<b>Show Assignment Links</b><br>YES <code>(default)</code>');
+            settingsMSG.push('<b>Show Grades</b><br>YES <code>(default)</code>');
+            settingsMSG.push('<b>Display Recent Grades</b><br>from the last 14 days. <code>(default)</code>');
             messageInit(time, command);
             updateElement('discord-embed-title', 'Canvas LMS | Settings');
-            updateElement('discord-embed-description', 'This message has not been configured yet. Please check back at a later time.');
+            updateElement('discord-embed-description', settingsMSG.join('<br>'));
+
             
             break;
     }

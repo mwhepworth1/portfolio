@@ -90,6 +90,7 @@ header {
   color: #f1f1f1;
   text-decoration: none;
   padding: 16px 18px;
+  display: inline-block;
 }
 .button-box .button:hover {
   background-color: #333333;
@@ -421,6 +422,7 @@ footer p {
 .tryit-subcommands {
   display: none;
   grid-column: 2/3;
+  text-align: center;
 }
 .tryit-subcommands p {
   font-size: 1rem;
@@ -473,5 +475,20 @@ footer p {
   }
   .button-box {
     margin-top: 10%;
+  }
+  .tryit-subcommands .button-box {
+    margin-top: 0px;
+    margin-bottom: 15%;
+  }
+  .casestudy-item {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+  .tryit {
+    display: block;
+  }
+  .button-box .button {
+    padding: 8px 9px;
+    margin: 5px;
   }
 }/*# sourceMappingURL=main.css.map */
