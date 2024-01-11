@@ -487,6 +487,8 @@ footer {
     background-color: $main-bg;
     display: grid;
     grid-template-columns: 1fr 650px;
+    padding-left: 7%;
+    padding-right: 7%;
 
     &-info {
         grid-column: 1/2;
@@ -580,6 +582,8 @@ footer {
     }
     .tryit {
         display: block;
+        padding-left: 7%;
+        padding-right: 7%;
     }
     .button-box .button {
         padding: 8px 9px;

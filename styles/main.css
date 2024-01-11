@@ -409,6 +409,8 @@ footer p {
   background-color: #333333;
   display: grid;
   grid-template-columns: 1fr 650px;
+  padding-left: 7%;
+  padding-right: 7%;
 }
 .tryit-info {
   grid-column: 1/2;
@@ -490,6 +492,8 @@ footer p {
   }
   .tryit {
     display: block;
+    padding-left: 7%;
+    padding-right: 7%;
   }
   .button-box .button {
     padding: 8px 9px;

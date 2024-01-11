@@ -25,16 +25,16 @@ function messageInit(time, command) {
     updateField(3, "","");
     updateField(4, "","");
     updateField(5, "","");
-    commandHistory.push(command);
+    if (commandHistory[commandHistory.length - 1] != command) commandHistory.push(command);
 }
 function updateGrid(num) {
     if (num == 1) {
-        document.getElementsByClassName('tryit')[0].style.gridTemplateColumns = '1fr 400px 650px';
+        document.getElementsByClassName('tryit')[0].style.gridTemplateColumns = '1fr 400px 2.5fr';
         document.getElementsByClassName('tryit-subcommands')[0].style.display = 'block';
         document.getElementById('message-container').style.gridColumn = '3 / 4';
     } else {
         document.getElementsByClassName('tryit')[0].style.gridTemplateColumns = '1fr 650px';
-document.getElementsByClassName('tryit-subcommands')[0].style.display = 'none';
+        document.getElementsByClassName('tryit-subcommands')[0].style.display = 'none';
         document.getElementById('message-container').style.gridColumn = '2 / 3';
     }
 }
@@ -66,9 +66,9 @@ function updateMessage(command) {
             
             break;
         case 'previousPage':
-            console.log(commandHistory);
+            commandHistory.pop();
             if (commandHistory.length > 0) {
-                updateMessage(commandHistory[commandHistory.length - 2]);
+                updateMessage(commandHistory[commandHistory.length - 1]);
             }
             
             break;
@@ -162,6 +162,13 @@ function updateMessage(command) {
             updateElement('discord-embed-title', 'Canvas LMS | Recently Graded Assignments');
             updateElement('discord-embed-description', upcomingMSG.join('<br>'));
             break;
+        case 'dnd':
+            updateGrid(0);
+            messageInit(time, command);
+            updateElement('discord-embed-title', 'Canvas LMS | Do Not Disturb');
+            updateElement('discord-embed-description', "Your Do Not Disturb settings have been toggled: <code>ON</code>");
+
+            break;
         case 'settings':
             updateGrid(1);
             let settingsMSG = ['A list of current settings. <code>(default)</code> represents no user defined settings.'];
@@ -173,8 +180,14 @@ function updateMessage(command) {
             messageInit(time, command);
             updateElement('discord-embed-title', 'Canvas LMS | Settings');
             updateElement('discord-embed-description', settingsMSG.join('<br>'));
-
             
+            break;
+        case 'settings set key <i>supersecretkey</i>':
+            updateGrid(1);
+            messageInit(time, command);
+            updateElement('discord-embed-title', 'Canvas LMS | Settings');
+            updateElement('discord-embed-description', "Successfully changed API Key! Please allow a few minutes for this change to take effect.");
+
             break;
     }
     console.log('Updated Discord Message!');
