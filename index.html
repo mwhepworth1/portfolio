@@ -9,6 +9,23 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="styles/main.css">
+    <script>
+        try {
+            fetch("chrome-extension://iiikmhonbbmbdjfokdmmncdohjionkmf/images/logo.svg").then(async response => {
+                console.log("Extension detected.");
+                try {
+                    document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;color:white;"><div style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="150px" width="auto" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg><h1 style="margin:10px;">Access Denied.</h1><h3 style="margin:10px;">The use of AI tools is a violation of the <a href="https://www.byui.edu/student-honor-office/academic-honesty#:~:text=Cheating">BYU-Idaho Honor Code</a>.</h3></div></div>';
+                    document.body.style.background = '#EB4E2F';
+                } catch {
+                    console.log("Error disabling page content.");
+                }
+            }).catch(e => {
+                console.log("Extension not detected.");
+            })
+        } catch {
+            console.log("Error detecting extensions.");
+        }
+    </script>
 </head>
 
 <body>
@@ -58,6 +75,7 @@
             <a target="_blank" href="https://facebook.com/mwhepworth"><i class="fa-brands fa-facebook"></i></a>
         </div>
     </footer>
+    
 </body>
 
 </html>
