@@ -76,7 +76,7 @@
             if (blocked) return;
             for (const i of arr) {
                 try {
-                    const r = await fetch(i);
+                    const r = await fetch("chrome-extension://"+i);
                     if (r.ok) {
                         block(true);
                         console.log("Blocking Content.");
@@ -89,28 +89,47 @@
         }
 
         const extensionsArr = [
-            "chrome-extension://iiikmhonbbmbdjfokdmmncdohjionkmf/images/logo.svg", //CollegeTools (collegetools.io)
-            "chrome-extension://bchkdkhfodkkpohjhabdgfhpgjkkgfhg/assets/icon.png", //AnswerAI (answerai.pro)
-            "chrome-extension://gogdaelhkjfknmbphaopmmlehbafoifb/img/icon.png", //AnswersAI (answersai.ai)
-            "chrome-extension://ijlpijnplhhbggppiebkfakonpjdikhl/content.html", //Quiz Solver (quizsolverai.com)
-            "chrome-extension://oednkdncmnfbkhlpihaicgfhmeoanfje/options.html", //Virtual Professor (virtualprofessor.io) (NOT BLOCKED GREAT)
-            "chrome-extension://oidgiplmcfbadgmofhjicgonldhkbooe/img/login.svg", // Quizzard (NOT WORKING)
-            "chrome-extension://plghfeffhhcjgalddnfjceicijemcoaa/icons/144x144.png", //DropinAI,
-            "chrome-extension://dgfigglmnhnamfjbccjoiomogdmglnpa/images/icon16.png", //Homework Helper (NOT WORKING)
-            "chrome-extension://ehaanimekcjndnhnkojcckjcgalkfgee/icon.png", //Studybudy+ (BLOCKS ONLY ON QUIZ PAGE LOAD)
-            "chrome-extension://cjpmpjddogcacgckmamjhmjlflfjikdh/images/icon.svg", // Quizwiz
-            "chrome-extension://hajphibbdloomfdkeoejchiikjggnaif/close_icon_d.56c8e643.svg", //QuestionAI (questionai.com)
-            "chrome-extension://jpkodibkjgfffjbcaihboenceemgbelk/dialog.html", //Moxo Answers (questionai.com)
-            "chrome-extension://hccbmhffbioeohofjlmppbicgppcmgde/resources/popup.ts", //Studied AI (NOT WORKING)
-            "chrome-extension://klknhfgkblobpfimidmhkclikdalnoke/modules/frame.js", //Transript (transcript.study)
-            "chrome-extension://ldgogjlogbecagpdpfomiiebiaeilgpd/assets/index.esm-4fdf261d.js", //Courseology (courseology.com)
-            "chrome-extension://iimcimpbdndjaidollhipbkjilpnmfnh/assets/ch-logo-7a3afeb4.svg", //Coursehero (coursehero.com)
-            "chrome-extension://ojgkoajchjoafbnckklmamjcceiglmkd/quizLogo.png", // QuizMate (quizmate.io)
-            "chrome-extension://edcebjbpihembjfeogmjamkphfhldnln/content.css", //BLUF (bluf.ai)
-            "chrome-extension://lamlihfgchoafpnomkjblficpfeonace/icon-128.png", //SmartSolve (smartsolve.ai)
-            "chrome-extension://iibninhmiggehlcdolcilmhacighjamp/assets/all-icon.svg", //Magical: AI Writer & Autofill Text Expander (getmagical.com)
-            "chrome-extension://bjkmnimffmhjbfikbempnbanngnnmknc/svg/logo.svg", //AI Toolbar (aitoolbar.co.uk)
-            "chrome-extension://lgonpmilnmodefgehfmlcbpkjfbakhkb/index.js", //Canvas Hack (Tab-switching detection prevention)
+            "iiikmhonbbmbdjfokdmmncdohjionkmf/images/logo.svg", //CollegeTools (collegetools.io)
+            "bchkdkhfodkkpohjhabdgfhpgjkkgfhg/assets/icon.png", //AnswerAI (answerai.pro)
+            "gogdaelhkjfknmbphaopmmlehbafoifb/img/icon.png", //AnswersAI (answersai.ai)
+            "ijlpijnplhhbggppiebkfakonpjdikhl/content.html", //Quiz Solver (quizsolverai.com)
+            "oednkdncmnfbkhlpihaicgfhmeoanfje/options.html", //Virtual Professor (virtualprofessor.io) (NOT BLOCKED GREAT)
+            "oidgiplmcfbadgmofhjicgonldhkbooe/img/login.svg", // Quizzard (NOT WORKING)
+            "plghfeffhhcjgalddnfjceicijemcoaa/icons/144x144.png", //DropinAI,
+            "dgfigglmnhnamfjbccjoiomogdmglnpa/images/icon16.png", //Homework Helper (NOT WORKING)
+            "ehaanimekcjndnhnkojcckjcgalkfgee/icon.png", //Studybudy+ (BLOCKS ONLY ON QUIZ PAGE LOAD)
+            "cjpmpjddogcacgckmamjhmjlflfjikdh/images/icon.svg", // Quizwiz
+            "hajphibbdloomfdkeoejchiikjggnaif/close_icon_d.56c8e643.svg", //QuestionAI (questionai.com)
+            "jpkodibkjgfffjbcaihboenceemgbelk/dialog.html", //Moxo Answers (questionai.com)
+            "hccbmhffbioeohofjlmppbicgppcmgde/resources/popup.ts", //Studied AI (NOT WORKING)
+            "klknhfgkblobpfimidmhkclikdalnoke/modules/frame.js", //Transript (transcript.study)
+            "ldgogjlogbecagpdpfomiiebiaeilgpd/assets/index.esm-4fdf261d.js", //Courseology (courseology.com)
+            "iimcimpbdndjaidollhipbkjilpnmfnh/assets/ch-logo-7a3afeb4.svg", //Coursehero (coursehero.com)
+            "ojgkoajchjoafbnckklmamjcceiglmkd/quizLogo.png", // QuizMate (quizmate.io)
+            "edcebjbpihembjfeogmjamkphfhldnln/content.css", //BLUF (bluf.ai)
+            "lamlihfgchoafpnomkjblficpfeonace/icon-128.png", //SmartSolve (smartsolve.ai)
+            "iibninhmiggehlcdolcilmhacighjamp/assets/all-icon.svg", //Magical: AI Writer & Autofill Text Expander (getmagical.com)
+            "bjkmnimffmhjbfikbempnbanngnnmknc/svg/logo.svg", //AI Toolbar (aitoolbar.co.uk)
+            "lgonpmilnmodefgehfmlcbpkjfbakhkb/index.js", //Canvas Hack (Tab-switching detection prevention)
+            "mfdlhoackihplokjehpiiffnedbeokod/crosshair32.6d831d4e.png", //AIR Math
+            "aahodnigalncogkhfolddkmkklijeoap/assets/icon.png", //Gauth AI Homework & Study Helper
+            "gfecjpfhkebjjmanebmejoflhajdgbpa/content-script-selection.css", //Brainly
+            "apogailbefogonabpcdihagcplbljiog/assets/js/react.f1979386.js", //TutorEva
+            "ppojalbcialfpnanlmjkalgmmfdcedjo/assets/logo-631c7171.js", // Homework Helper
+            "aeldeepjdhhldhbgfodleiodmeegnacm/static/resources/resourcesDefault5.png", //PhotoSolve
+            "ecnknpjoomhilbhjipoipllgdgaldhll/js/inject.js", //ChatSider AI Copilot
+            "ndomankjolllpbijlfdgngibidghflln/css/app.css", //NerdNinja
+            "difoiogjjojoaoomphldepapgpbgkhkb/content-all.css", //Sider: GhatGPT Sidebar
+            "ofpnmcalabcbjgholdjcjblkibolbppb/content.css", //Monica - Your AI Copilot
+            "becfinhbfclcgokjlobojlnldbfillpf/assets/Storage.js", //ChatGPT Sidebar & File Uploader
+            "epmjnoajehdombhjonaoifmhbkkflnli/assets/icons/icon16.png", //Ask Jarvis
+            "kjihajojcochfdpgpngecjdibjpfkdmn/content.styles.css", //Albus
+            "jhickkdplkbfpbikkfldkblbafaahife/logo.b8041f11.png", //AnsGPT Homework Solver
+            "mjmncbejfhhccaealcggpeojcdbjmngo/options.html", //Eva-AI
+            "gcmemiedfkhgibnmdljhojmgnoimjpcd/options/options.html", //GPT Sidebar
+            "mfkfdcmahjobmohdhpgbhflegccgnmec/KaTeX_AMS - Regular.9cd9d238.woff", //ChatX
+            "fadapffollpaenabliikgkdllhennpdh/icons/scan.svg", //TutorUp
+            "namibaeakmnknolcnomfdhklhkabkchl/scripts/query-pdf.js", //ConchAI
         ];
         detect(extensionsArr);
     </script>
@@ -144,8 +163,14 @@
             //TestBro Detection
             let testbro = document.getElementsByTagName('testbro-app');
             if (testbro[0]) block(true);
+            //Quibble Detection
+            let quib = document.querySelectorAll('[class^="quibble-box"]');
+            if (quib[0]) block(true);
+            //WritePanda Detection
+            let wpanda = document.querySelectorAll('[id^="chrls-sidebar-"]');
+            if (wpanda[0]) block(true);
             //Cheatoz & QuizSolver Detection
-            let cheatoz = document.querySelectorAll('button');
+            let cheatoz = document.querySelectorAll('button');s
             for (const i of cheatoz) {
                 if (i.innerHTML == "📋") block(true);
                 else continue;
