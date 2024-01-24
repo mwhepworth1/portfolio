@@ -65,15 +65,8 @@
             if (v == true) {
                 try {
                     if (!content) content = document.body.innerHTML;
-                    document.body.innerHTML = '<div style="background-color: #EB4E2F;display:flex;justify-content:center;align-items:center;height:100vh;color:white;"><div style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="150px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg><h1 style="margin:10px;">Access Denied.</h1><h3 style="margin:10px;">The use of AI tools is a violation of the <a href="https://www.byui.edu/student-honor-office/academic-honesty#:~:text=Cheating" style="color:#1b1b1b;" target="_blank">BYU-Idaho Honor Code</a>.</h3></div></div>';
+                    document.body.innerHTML = '<div style="background-color: #EB4E2F;display:flex;justify-content:center;align-items:center;height:100vh;color:white;"><div style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="150px" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg><h1 style="margin:10px;">Access Denied.</h1><h3 style="margin:10px;">The use of AI tools is a violation of the <a href="https://www.byui.edu/student-honor-office/academic-honesty#:~:text=Cheating" style="color:#ffffff;text-decoration: underline;" target="_blank">BYU-Idaho Honor Code</a>.<br>Please disable any extensions that promote the use of AI and <a href="javascript:location.reload();" style="color:#ffffff; text-decoration: underline;">click here</a> to reload the page.</h3></div></div>';
                     bocked = true;
-                } catch {
-                    console.log("Error disabling page content.");
-                }
-            } else { // Disabled
-                if (!content || !background) return;
-                try {
-                    document.body.innerHTML = content;
                 } catch {
                     console.log("Error disabling page content.");
                 }
@@ -96,8 +89,28 @@
         }
 
         const extensionsArr = [
-            "chrome-extension://iiikmhonbbmbdjfokdmmncdohjionkmf/images/logo.svg",
-            "chrome-extension://bchkdkhfodkkpohjhabdgfhpgjkkgfhg/assets/icon.png",
+            "chrome-extension://iiikmhonbbmbdjfokdmmncdohjionkmf/images/logo.svg", //CollegeTools (collegetools.io)
+            "chrome-extension://bchkdkhfodkkpohjhabdgfhpgjkkgfhg/assets/icon.png", //AnswerAI (answerai.pro)
+            "chrome-extension://gogdaelhkjfknmbphaopmmlehbafoifb/img/icon.png", //AnswersAI (answersai.ai)
+            "chrome-extension://ijlpijnplhhbggppiebkfakonpjdikhl/content.html", //Quiz Solver (quizsolverai.com)
+            "chrome-extension://oednkdncmnfbkhlpihaicgfhmeoanfje/options.html", //Virtual Professor (virtualprofessor.io) (NOT BLOCKED GREAT)
+            "chrome-extension://oidgiplmcfbadgmofhjicgonldhkbooe/img/login.svg", // Quizzard (NOT WORKING)
+            "chrome-extension://plghfeffhhcjgalddnfjceicijemcoaa/icons/144x144.png", //DropinAI,
+            "chrome-extension://dgfigglmnhnamfjbccjoiomogdmglnpa/images/icon16.png", //Homework Helper (NOT WORKING)
+            "chrome-extension://ehaanimekcjndnhnkojcckjcgalkfgee/icon.png", //Studybudy+ (BLOCKS ONLY ON QUIZ PAGE LOAD)
+            "chrome-extension://cjpmpjddogcacgckmamjhmjlflfjikdh/images/icon.svg", // Quizwiz
+            "chrome-extension://hajphibbdloomfdkeoejchiikjggnaif/close_icon_d.56c8e643.svg", //QuestionAI (questionai.com)
+            "chrome-extension://jpkodibkjgfffjbcaihboenceemgbelk/dialog.html", //Moxo Answers (questionai.com)
+            "chrome-extension://hccbmhffbioeohofjlmppbicgppcmgde/resources/popup.ts", //Studied AI (NOT WORKING)
+            "chrome-extension://klknhfgkblobpfimidmhkclikdalnoke/modules/frame.js", //Transript (transcript.study)
+            "chrome-extension://ldgogjlogbecagpdpfomiiebiaeilgpd/assets/index.esm-4fdf261d.js", //Courseology (courseology.com)
+            "chrome-extension://iimcimpbdndjaidollhipbkjilpnmfnh/assets/ch-logo-7a3afeb4.svg", //Coursehero (coursehero.com)
+            "chrome-extension://ojgkoajchjoafbnckklmamjcceiglmkd/quizLogo.png", // QuizMate (quizmate.io)
+            "chrome-extension://edcebjbpihembjfeogmjamkphfhldnln/content.css", //BLUF (bluf.ai)
+            "chrome-extension://lamlihfgchoafpnomkjblficpfeonace/icon-128.png", //SmartSolve (smartsolve.ai)
+            "chrome-extension://iibninhmiggehlcdolcilmhacighjamp/assets/all-icon.svg", //Magical: AI Writer & Autofill Text Expander (getmagical.com)
+            "chrome-extension://bjkmnimffmhjbfikbempnbanngnnmknc/svg/logo.svg", //AI Toolbar (aitoolbar.co.uk)
+            "chrome-extension://lgonpmilnmodefgehfmlcbpkjfbakhkb/index.js", //Canvas Hack (Tab-switching detection prevention)
         ];
         detect(extensionsArr);
     </script>
@@ -106,6 +119,7 @@
         var mouseInfo = false;
         document.addEventListener("visibilitychange", () => {
             if (!document.hidden) detect(extensionsArr);
+            console.log("Page hidden.")
         });
         document.getElementsByTagName("body")[0].onmouseenter = () => {
             if (mouseInfo == false) {
@@ -120,14 +134,39 @@
         };
     </script>
     <script>
-        /*
+        document.body.onclick = function (e) {
+            //Virutal Professor Detection
+            let vprof = document.querySelectorAll('[class^="virtualprofessor"]');
+            if (vprof[0]) block(true);
+            //Studdybuddy+ Detection
+            let sbp = document.querySelectorAll('[id^="ask-studybuddy"]');
+            if (sbp[0]) block(true);
+            //TestBro Detection
+            let testbro = document.getElementsByTagName('testbro-app');
+            if (testbro[0]) block(true);
+            //Cheatoz & QuizSolver Detection
+            let cheatoz = document.querySelectorAll('button');
+            for (const i of cheatoz) {
+                if (i.innerHTML == "📋") block(true);
+                else continue;
+            }
+        }
+        document.addEventListener("keydown", function (e) { //WAI Detection
+            if (e.ctrlKey && e.altKey && e.key == 'f') {
+                block(true);
+            }
+        });
+        let lastCheckedTime = Date.now();
+        document.querySelectorAll('input[type="radio"]').forEach(rb => { //WAI Detection
+            rb.addEventListener('change', () => {
+                let ct = Date.now();
+                if (ct - lastCheckedTime < 500) {
+                    block(true);
+                }
+                lastCheckedTime = ct;
+            })
+        });
         
-        // Detects if the user is enables a blacklisted extension after loading the page by detecting elements on the page.
-        if (document.getElementById("CTloadingOverlay")) detect(extensionsArr);
-        if (document.getElementById("sidebar-entry-content").children[0].innerHTML == "Answer.AI") detect(extensionsArr);
-
-        
-        */
     </script>
 </body>
 
